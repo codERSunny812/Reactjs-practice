@@ -121,19 +121,47 @@
 
 // basic form validation 
 
+// import "./App.css";
+// import React from "react";
+// import BasicForm from "./BasicFormValidation";
+
+
+// function App(){
+//   const data=true;
+//   return(
+//     <div className="App">
+//       <h1>Basic form validation  </h1>
+//       <BasicForm />
+//     </div>
+//   ); 
+// }
+
+// export default App;
+
+ 
+
+// pass function as props 
+
+
 import "./App.css";
 import React from "react";
-import BasicForm from "./BasicFormValidation";
-
-
+import PassFun from "./passFunctionAsProps";
 function App(){
-  // const data=true;
+  function getData(){
+    alert("namaste react")
+  }
   return(
     <div className="App">
-      <h1>Basic form validation  </h1>
-      <BasicForm />
+      {/* <h1> pass function as props  </h1>  */}
+      <PassFun  data={getData}/>
+      <div className="superchild">
+      <h1>hey this is me super child</h1>
+      <Child data={getData} />
     </div>
+    </div>
+    
   ); 
 }
 
 export default App;
+
