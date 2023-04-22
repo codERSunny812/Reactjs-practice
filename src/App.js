@@ -455,6 +455,7 @@
 
   {/* you can also itrate the array in the return using the map function  */}
 
+import { useState } from 'react';
 //   {
 //     students.map((items)=>{
 //       <h3>{items}</h3>
@@ -479,37 +480,255 @@
 
 // list with the bootsrap and unique key 
 
- import './App.css';
- import React from 'react';
- import {Table} from 'react-bootstrap'
- function App(){
+//  import './App.css';
+//  import React from 'react';
+//  import {Table} from 'react-bootstrap'
+//  function App(){
 
-  const user=[
-    {name:"sunny ", age:21,gender:"male"},
-    {name:"shivam ",age:22,gender:"male"},
-    {name:"manas",age:21,gender:"male"}
-  ]
-  return(
-    <div className="App">
-      <h1>list with bootstrap</h1>
-      <Table >
-        <tr > 
-          <td>Name</td>
-          <td>age</td>
-          <td>gender</td>
-        </tr>
-        {
-          user.map((items,i)=>
-          <tr  key={i}>
-            <td>{items.name}</td>
-            <td>{items.age}</td>
-            <td>{items.gender}</td>
-          </tr>
-          )
-        }
-      </Table>
-          </div>
-  );
- }
+//   const user=[
+//     {name:"sunny ", age:21,gender:"male"},
+//     {name:"shivam ",age:22,gender:"male"},
+//     {name:"manas",age:21,gender:"male"}
+//   ]
+//   return(
+//     <div className="App">
+//       <h1>list with bootstrap</h1>
+//       <Table >
+//         <tr > 
+//           <td>Name</td>
+//           <td>age</td>
+//           <td>gender</td>
+//         </tr>
+//         {
+//           user.map((items,i)=> 
+//           <tr  key={i}>
+//             <td>{items.name}</td>
+//             <td>{items.age}</td>
+//             <td>{items.gender}</td>
+//           </tr>
+//           )
+//         }
+//       </Table>
+//           </div>
+//   );
+//  }
 
- export default App;
+//  export default App;
+
+
+
+// nested list with nested array 
+
+
+// import './App.css';
+// import React from 'react';
+
+//  function App(){
+
+
+// const user=[
+
+//   { 
+
+//     name:"sunny ", age:21 , address:[ 
+//     {hno:121,  city:"delhi", country:"india"},
+//     {hno: 131, city:"mumbai", country:"india"},
+//     {hno:142 , city:"lucknow", country:"india"},
+//     {hno: 134, city:"bihar", country:"india"}
+//    ]
+//   } ,
+
+//   {
+     
+//      name:"shivam ", age:22 , address:[
+//         {hno:121,  city:"delhi", country:"india"},
+//         {hno: 131, city:"mumbai", country:"india"},
+//         {hno:142 , city:"lucknow", country:"india"},
+//         {hno: 134, city:"bihar", country:"india"}
+//     ]
+//   },
+
+//     {
+//       name:"manas",age:21,address:[
+//         {hno:121,  city:"delhi", country:"india"},
+//         {hno: 131, city:"mumbai", country:"india"},
+//         {hno:142 , city:"lucknow", country:"india"},
+//         {hno: 134, city:"bihar", country:"india"}
+//     ]
+//   },
+
+//     {
+//       name:"varun",age:2,address:[
+//         {hno:121,  city:"delhi", country:"india"},
+//         {hno: 131, city:"mumbai", country:"india"},
+//         {hno:142 , city:"lucknow", country:"india"},
+//         {hno: 134, city:"bihar", country:"india"}
+//       ]
+//     }
+
+//   ];
+//   return(
+//     <div className="App">
+//       <h1>List with nested array </h1>
+      
+//           </div>
+//   );
+//  }
+
+//  export default App;
+
+// reuse components 
+
+// make a component
+// make a list form the array 
+// use components inside the map function 
+
+// letss start 
+
+// import './App.css';
+// import React from 'react';
+// import User2 from './User2';
+
+// function App(){
+//   const user=[
+//     {
+//       name:"sunny",email:"user1@test.com",gender:"male"
+//   },
+//   {
+//     name:"shivam", email:"user2@test.com",gender:"male"
+//   }
+//   ]
+//   return(
+// <div className="App">
+//   <h1>resue the component</h1>
+//   <User2 data={item}/>
+//   {
+//     user.map((item,i)=>{
+//       <h1>{item.name}</h1>
+//     })
+//   }
+// </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// react fragment 
+
+// import './App.css';
+// import React, { Fragment } from 'react';
+// import Child from './child';
+
+// function App(){
+// return (
+//   <div className="App">
+//     <h1>react fragment </h1>
+//     <table>
+//       <tbody>
+//         <tr>
+//           <Child />
+//         </tr>
+//       </tbody>
+//     </table>
+
+//   </div>
+
+  // you can use anything else in place of div
+  
+
+  // <Fragment>
+  //   <h1>react fragment </h1>
+  // </Fragment>
+//   )  
+// }
+
+// export default App;
+
+
+// sending data child to the parent components 
+
+
+
+// import './App.css';
+// import React from 'react';
+// import Child2 from './Child2';
+
+// function App(){
+
+//   function ParentAlert(myname){
+//     alert("hello ");
+//     alert(myname);
+// }
+//   let data="sunny ";
+//   return (
+//     <div className="App">
+//       <h1>lifiting state up in react </h1>
+//       <Child2 name={data} alert={ParentAlert}/>
+//     </div>
+//   );
+// }
+
+
+// export default App;
+
+
+// pure components
+
+// import './App.css';
+// import React, { Component } from 'react';
+// import Child2 from './Child2';
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div className="App">
+//         <h1>pure components in react </h1>
+//         <Child2 />
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+
+
+// useMemos hooks in react js 
+
+// import './App.css';
+// import React from 'react';
+// import { useMemo } from 'react';
+
+// function App(){
+
+//   const [count , setCount]=useState(0);
+//   const[item , setItem]=useState(1);
+  
+
+//   const CalFun=useMemo(
+//      function CalCount(){
+//       console.warn("hey im called only on the count button click ")
+//     return count*2;
+//   } , [count]
+// )
+
+// function CalCount(){
+  //   return count*2;
+  // }
+
+  // here the function run if we click the set item button so to stop that we use useMemos 
+//   return(
+//     <div className="App">
+//       <h1>useMemos in react js </h1>
+//       <h1>count is :{count}</h1>
+//       <h1>item is : {item}</h1>
+//       <button onClick={()=>{setCount(count+1)}}>update count </button>
+//       <button onClick={()=>{setItem(item*2
+//         )}}>update item</button>
+//     </div>
+//   )
+// }
+
+// export default App;
