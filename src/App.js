@@ -455,7 +455,7 @@
 
   {/* you can also itrate the array in the return using the map function  */}
 
-import { useState } from 'react';
+import { Component, createRef, useRef, useState } from 'react';
 //   {
 //     students.map((items)=>{
 //       <h3>{items}</h3>
@@ -732,3 +732,232 @@ import { useState } from 'react';
 // }
 
 // export default App;
+
+// ref in react js 
+
+// import './App.css';
+// import React from 'react';
+
+
+// class App extends Component{
+//   constructor(){
+//     super();
+//     this.inputRef=createRef();
+//   }
+//   getValue(){
+//     console.log(this.inputRef.current.value);
+//     this.inputRef.current.style.color="red";
+//   }
+//   render(){ 
+//     return(
+//       <div className="App">
+//          <h1>ref in react js </h1>
+//          <input typeof='text' ref={this.inputRef}/>
+//         <button onClick={()=>
+//           this.getValue()
+//         }>click me </button>
+//          </div>
+//     );
+     
+    
+//   }
+// }
+
+// export default App;
+
+
+
+// useref in react js
+
+// import './App.css';
+// import React from 'react';
+
+// function App(){
+//   let inputRef=useRef();
+//   function handleButton(){
+//     console.warn("button is clicked ");
+//     inputRef.current.value="1000";
+//     inputRef.current.style.color="white";
+//     inputRef.current.style.backgroundColor="black";
+//     // inputRef.current.style.color="red";
+
+//   }
+//   return(
+// <div className="App">
+//   <h1>useref in react js </h1>
+//   <input type="text" ref={inputRef} />
+//   <button onClick={handleButton}>click me </button>
+
+// </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// forward ref in react js 
+
+// import React from 'react';
+// import ChildRef from './ChildRef';
+
+// import './App.css';
+
+// function App(){
+// let inputRef=useRef(null);
+// function updateInput(){
+//   inputRef.current.value="200";
+//   inputRef.current.focus;
+// }
+//   return(
+// <div className="App">
+//   <h1>forward ref in react js </h1>
+//   <ChildRef  ref={inputRef}/>
+//   <button onClick={updateInput} >update input box </button>
+// </div>
+//   );
+// }
+
+
+// export default App;
+
+
+// controlled statement in react js 
+
+
+// controlling the field using the state is known as controlled statement
+
+// import './App.css';
+// import React from 'react';
+
+// function App(){
+//    let [val,setVal]=useState(" ");
+// return (
+// <div className="App">
+//   <h1>
+//     controlled statement in react js
+//   </h1>
+//   <input type="text"  value={val}  onChange={(e)=>setVal(e.target.value)}/>
+//   <h2>the  text in the input box is :{val}</h2>
+ 
+// </div>
+// );
+// }
+
+// export default App;
+
+
+
+// uncontrollled statement in react js 
+
+// controlling the input statement using the javascript or ref 
+
+
+
+// import './App.css';
+// import React from 'react';
+// let inputRef=useRef(null);
+
+// function App(){
+//   function submit(e){
+//     e.preventDefault();
+//   }
+//   return(
+//     <div className="App">
+//       <h1>uncontrolled statement in react js </h1>
+//     <form action="" onSubmit={submit}>
+//       <input type="text" name="" id="" ref={inputRef} />
+//     </form>
+//     </div>
+//   );
+// }
+
+
+// export default App;
+
+
+// simple HOC 
+
+// high order components 
+ 
+
+// take components as input and return output as component
+
+
+// import './App.css';
+// import React from 'react';
+
+// function App(){
+//   return(
+//     <div className="App">
+//       <h1>high order components in react js </h1>
+//       <HocRed  cmp={Counter}/>
+//       <HocGreen  cmp={Counter}/>
+//       <HocBlue  cmp={Counter}/>
+
+//     </div>
+//   )
+// } 
+
+
+// function HocRed(props){
+//   return <h2 style={{backgroundColor:"red"}}> <props.cmp />
+//   </h2>
+// }
+
+// function HocGreen(props){
+//   return <h2 style={{backgroundColor:"green"}}> <props.cmp />
+//   </h2>
+// }
+
+// function HocBlue(props){
+//   return <h2 style={{backgroundColor:"blue"}}> <props.cmp />
+//   </h2>
+// }
+
+
+// function Counter(){
+//   const [count, setCount]=useState(0);
+//   return(
+//     <div className="App">
+//       <h1>new components </h1>
+//       <h3>{count}</h3>
+//       <button onClick={()=>setCount(count+1)}>update 
+
+//       </button>
+//     </div>
+//   )
+// }
+
+
+// export default App;
+
+
+
+
+// react router 
+
+// what's is router ?
+
+// --> to  make diffrent pages 
+
+
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+function App(){
+  return(
+    <div className="App"> 
+<h1> hello react router  6 </h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/home'  element={ <h1> hey this is home </h1> }/>
+    </Routes>
+    </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
